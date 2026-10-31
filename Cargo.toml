@@ -1,0 +1,26 @@
+[package]
+name = "ncsim"
+version = "0.1.0"
+edition = "2021"
+description = "Quantum circuit simulation in safe Rust on ncalg: Pauli and Clifford algebra, stabilizer states, exact path sums, stabilizer-rank sums and matrix product states."
+readme = "README.md"
+rust-version = "1.82"
+keywords = ["quantum", "simulation", "clifford", "stabilizer", "circuit"]
+categories = ["science", "simulation"]
+license = "GPL-3.0-or-later"
+repository = "https://github.com/aidan-epperly/ncsim"
+
+[dependencies]
+ncalg = { git = "https://github.com/aidan-epperly/ncalg" }
+num-traits = "0.2"
+num-bigint = "0.4"
+num-rational = "0.4"
+num-complex = "0.4"
+faer = { version = "0.24", default-features = false, features = ["std", "rayon", "linalg"] }
+rayon = "1.10"
+rand = "0.8"
+
+[dev-dependencies]
+
+[profile.release]
+debug = 1
